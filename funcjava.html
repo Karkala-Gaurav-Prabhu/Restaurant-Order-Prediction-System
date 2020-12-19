@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>functions</title>
+	<script type="text/javascript" >
+	function f1()
+{
+	document.write("<table border=2><tr><th>Number</th><th>Squares</th><th>Cube</th>");
+	
+	for(i=5;i<16;i++)
+		document.write("<tr><td>"+i+"</td><td>"+(i*i)+"</td><td>"+(i*i*i)+"</td></tr>");
+
+	document.write("</table>");		
+}
+
+function f2()
+{
+	var k=0,j=1;
+	document.write(k+"  "+j+"  ");
+	for(i=1;i<20;i++)
+	{
+		r=k+j;
+		document.write(r+"  ");
+		k=j;
+		j=r;
+	}
+
+}
+
+function f3()
+{
+	var n1=Number(prompt("Enter number 1: "));
+	var n2=Number(prompt("Enter number 2: "));
+	var n3=Number(prompt("Enter number 3: "));
+
+	if(n1>n2 && n1>n3)
+		alert(n1+" is largest");
+	else if(n2>n3)
+		alert(n2+" is largest");
+	else
+		alert(n3+" is largest");
+}
+
+function f4()
+{
+	var str=prompt("Enter the string: ");
+	arr=str.split(" ");
+
+	arr.sort();
+
+	document.write("Sorted list: "+arr);
+}
+
+function f5()
+{
+	var c=0;
+	var str=new Array(10);
+	var n=Number(prompt("Enter the number of words: "));
+	for(i=1;i<=n;i++)
+	{
+		str[i]=prompt("Enter the word: ");
+		if(str[i].charAt(str[i].length-1)=='a' || str[i].charAt(str[i].length-1)=='y')
+			c++;
+
+	}
+
+	alert(c);
+}
+
+function f6()
+{
+	var index=-1;
+	var str=prompt("Enter the string: ");
+	for(i=0;i<str.length;i++)
+	{
+		if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u')
+		{
+			index=1;
+			pos=i;
+			break;
+		}
+	}
+
+	if(index)
+		alert(pos+1);
+}
+
+function f8()
+{
+	var i=0,j=0,n;
+	var row=Number(prompt("Enter the no of rows: "));
+	var col=Number(prompt("Enter the no of cols: "));
+	var num=[[],[]];
+	for(i=0;i<row;i++)
+		for(j=0;j<col;j++)
+		{
+			n=prompt("Enter number: ");
+			num[i][j]=Number(n);
+		}
+
+	for(i=0;i<row;i++)
+	{
+		sum=0;
+		for(j=0;j<col;j++)
+			sum=sum+num[i][j];
+
+		avg=sum/col;
+
+		num[i][j]=avg;
+	}
+		
+	for(i=0;i<=row;i++)
+	{
+		for(j=0;j<=col;j++)
+			document.write(num[i][j],"  ");
+
+		document.write("<br \>");
+	}
+}
+
+function f9()
+{
+	var num=Number(prompt("Enter the number: "));
+	var n=num;
+
+	var rem,sum=0;
+
+	while(n>0)
+	{
+		rem=n%10;
+		n=Math.floor(n/10);
+		sum=(sum*10)+rem;
+	}
+
+	alert("reverse of "+num+" is "+sum);
+}
+
+	</script>
+</head>
+
+<body>
+	<script type="text/javascript">
+
+	var choice=Number(prompt("Enter choice:\n1.Squares and cubes\n2.Fib\n3.largest of 3\n4.sort words\n5.endin with y or a\n6.pos of vowel\n7.neg,pos,0\n8.array avg\n9.rev a num:\n"));
+
+	switch(choice)
+	{
+		case 1:f1();
+						break;
+
+		case 2:f2();
+						break;
+	
+		case 3:f3();
+						break;
+		case 4:f4();
+						break;
+		case 5:f5();
+						break;
+		case 6:f6();
+						break;
+		case 7:f7();
+						break;
+		case 8:f8();
+						break;
+		case 9:f9();
+						break;
+
+	}
+
+	</script>
+</body>
+</html>
